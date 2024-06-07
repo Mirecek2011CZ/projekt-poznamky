@@ -71,19 +71,24 @@ export default function NoteUpdateForm() {
           onChange={(e) => handleChange(e)}
         />
         <input
-          type="number"
-          defaultValue={note.legs}
-          name="legs"
+          type="text"
+          defaultValue={note.date}
+          name="date"
           required
-          placeholder="Enter legs"
+          placeholder="Enter date"
           onChange={(e) => handleChange(e)}
         />
+        <select type="text" name="type" required placeholder="Enter type" onChange={value => handleChange(value)}>
+          <option value = "Option1">Option1</option>
+          <option value = "Option2">Option2</option>
+          <option value = "Option3">Option3</option>
+        </select>
         <input
           type="text"
-          defaultValue={note.color}
-          name="color"
+          defaultValue={note.text}
+          name="text"
           required
-          placeholder="Enter color"
+          placeholder="Enter text"
           onChange={(e) => handleChange(e)}
         />
         <button onClick={handlePost}>Update note</button>

@@ -17,6 +17,7 @@ export default function NoteCreateForm() {
   }
   
   const handleChange = (e) => {
+    console.log(e.target.name)
     setFormData({...formData, [e.target.name]: e.target.value});
   }
   
@@ -34,13 +35,18 @@ export default function NoteCreateForm() {
       <h1>Note create form</h1>
       <form>
         <input type="text" name="name" required placeholder="Enter  name" onChange={e => handleChange(e)}/>
-        <input type="number" name="date" required placeholder="Enter date" onChange={e => handleChange(e)}/>
+        <input type="text" name="date" required placeholder="Enter date" onChange={e => handleChange(e)}/>
+        <select type="text" name="type" required placeholder="Enter type" onChange={value => handleChange(value)}>
+          <option value = "Option1">Option1</option>
+          <option value = "Option2">Option2</option>
+          <option value = "Option3">Option3</option>
+        </select>
         <input type="text" name="text" required placeholder="Enter text" onChange={e => handleChange(e)}/>
         <button onClick={handlePost}>
           Create note
         </button>
       </form>
-      <Link to={"/"}>
+      <Link class = "go_back_button" to={"/"}>
         <p>Go back</p>
       </Link>
     </>

@@ -44,7 +44,7 @@ export default function NoteList() {
           <NoteLink key={index} {...note} />
         ))
       }
-      <Link to={"/"}>
+      <Link class = "go_back_button" to={"/"}>
         <p>Go back</p>
       </Link>
     </>
