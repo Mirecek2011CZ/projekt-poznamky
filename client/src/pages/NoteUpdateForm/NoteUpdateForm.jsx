@@ -29,7 +29,14 @@ export default function NoteUpdateForm() {
   };
 
   const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    if (e.target.value !== "Enter type"){
+      console.log(e.target.name)
+      setFormData({...formData, [e.target.name]: e.target.value});
+    }
+    else{
+      e.target.value = ""
+      setFormData({...formData, [e.target.name]: e.target.value});
+    }
   };
 
   const handlePost = (e) => {
@@ -78,7 +85,8 @@ export default function NoteUpdateForm() {
           placeholder="Enter date"
           onChange={(e) => handleChange(e)}
         />
-        <select type="text" name="type" required placeholder="Enter type" onChange={value => handleChange(value)}>
+        <select type="text" name="type" onChange={value => handleChange(value)}>
+          <option value = "Enter type"></option>
           <option value = "Option1">Option1</option>
           <option value = "Option2">Option2</option>
           <option value = "Option3">Option3</option>
