@@ -48,8 +48,9 @@ exports.updateNote = async (req, res) => {
   try {
     const data = {
       name: req.body.name,
-      legs: req.body.legs,
-      color: req.body.color,
+      date: req.body.date,
+      type: req.body.type,
+      text: req.body.text,
     };
     const result = await Note.findByIdAndUpdate(req.params.id, data);
     if (result) {
@@ -71,6 +72,7 @@ exports.createNote = async (req, res) => {
     const data = new Note({
       name: req.body.name,
       date: req.body.date,
+      type: req.body.type,
       text: req.body.text,
     });
     const result = await data.save();

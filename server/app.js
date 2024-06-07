@@ -11,7 +11,6 @@ mongoose
 .catch((err) => console.log(err));
 
 const indexRouter = require('./routes/index');
-const catsRouter = require('./routes/cats');
 const notesRouter = require('./routes/notes');
 
 const app = express();
@@ -28,7 +27,6 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
-app.use('/cats', catsRouter);
 app.use('/notes', notesRouter);
 
 
