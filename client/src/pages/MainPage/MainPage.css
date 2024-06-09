@@ -3,7 +3,10 @@ body{
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    background-color: white;
+    color: black;
 }
+
 
 #root{
     display: flex;
@@ -11,4 +14,37 @@ body{
     flex-direction: column;
     width: 800px;
     height: 800px;
+}
+
+.button-container {
+    display: flex;
+    gap: 20px;
+}
+
+.button {
+    border: 2px solid #333;
+    color: #333;
+    background-color: transparent;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+.button:hover {
+    background-color: #333;
+    color: white;
+}
+
+.button-secondary {
+    border: 2px solid #007BFF;
+    color: #007BFF;
+}
+
+.button-secondary:hover {
+    background-color: #007BFF;
+    color: white;
 }

@@ -4,21 +4,16 @@ import { Link } from "react-router-dom";
 export default function MainPage() {
   return (
     <>
-      <h1>Notebooks</h1>
+      <h1>Poznámkový blog</h1>
 
+      <div class="button-container">
       <Link to={"/createnote"}>
-        <p>Create note</p>
+      <button class="button">Vytvořit poznámku</button>
       </Link>
       <Link to={"/notes"}>
-        <p>Notes</p>
+      <button class="button button-secondary">Existující poznámky</button>
       </Link>
-
-      <Link to={"/createcategory"}>
-        <p>Create category</p>
-      </Link>
-      <Link to={"/categories"}>
-        <p>Categories</p>
-      </Link>
+      </div>
     </>
   );
 }
