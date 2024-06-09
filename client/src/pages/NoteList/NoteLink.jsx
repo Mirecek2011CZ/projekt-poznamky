@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom"
 
-export default function NatLink(props) {
+export default function NoteLink(props) {
    
     return (
         <>
