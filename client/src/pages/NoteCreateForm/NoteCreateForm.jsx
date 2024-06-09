@@ -53,7 +53,7 @@ export default function NoteCreateForm() {
           Create note
         </button>
       </form>
-      <Link class = "go_back_button" to={"/"}>
+      <Link to={"/"}>
         <p>Go back</p>
       </Link>
     </>
