@@ -24,6 +24,9 @@ export default function NoteList() {
     return (
       <>
         <p>Notes not found</p>
+        <Link to={"/"}>
+          <p>Go back</p>
+        </Link>
       </>
     )
   }
@@ -44,7 +47,7 @@ export default function NoteList() {
           <NoteLink key={index} {...note} />
         ))
       }
-      <Link class = "go_back_button" to={"/"}>
+      <Link to={"/"}>
         <p>Go back</p>
       </Link>
     </>
