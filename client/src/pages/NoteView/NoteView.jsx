@@ -33,7 +33,7 @@ export default function NoteView() {
 
   const handleDelete = async (e) => {
     e.preventDefault();
-    if (note.name === formData) {
+    if (note.name) {
       const data = await deleteNote(id);
       if (data.status === 200) {
         navigate("/");
