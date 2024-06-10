@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import NoteLink from "./NoteLink";
 import { useState, useEffect } from "react";
 import { getNotes } from "../../models/Note";
+import "./NoteList.css";
 
 export default function NoteList() {
   const [notes, setNotes] = useState();
