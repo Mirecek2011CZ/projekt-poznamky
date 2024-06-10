@@ -14,7 +14,7 @@ body {
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     width: 100%;
-    max-width: 400px;
+    max-width: 500px;
 }
 
 h1 {
@@ -40,7 +40,7 @@ input[type="text"]::placeholder {
     color: #cacaca;
 }
 
-button {
+.createBtn {
     width: 100%;
     padding: 12px;
     background-color: #007BFF;
@@ -52,7 +52,7 @@ button {
     transition: background-color 0.3s ease;
 }
 
-button:hover {
+.createBtn:hover {
     background-color: #0056b3;
 }
 
@@ -71,4 +71,11 @@ p:hover {
  
 option {
     color: #cacaca;
+}
+
+.backBtn {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 5px;
 }
