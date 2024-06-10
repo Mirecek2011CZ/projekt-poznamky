@@ -27,7 +27,7 @@ export default function NoteList() {
     return (
       <>
         <p>Notes not found</p>
-        <Link to={"/${id}"}>
+        <Link to={"/"}>
           <p>Go back</p>
         </Link>
       </>
