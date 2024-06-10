@@ -40,7 +40,7 @@ export default function NoteCreateForm() {
 
   return (
     <>
-    
+
       <div class="form-container">
         <Link to={"/"}>
           <Button className="backBtn" variant="outlined">
@@ -57,7 +57,7 @@ export default function NoteCreateForm() {
             onChange={(e) => handleChange(e)}
           />
           <input
-            type="text"
+            type="date"
             name="date"
             required
             placeholder="Enter date"
