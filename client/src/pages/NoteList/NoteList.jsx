@@ -3,6 +3,8 @@ import NoteLink from "./NoteLink";
 import { useState, useEffect } from "react";
 import { getNotes } from "../../models/Note";
 import "./NoteList.css";
+import * as React from "react";
+import Button from "@mui/material/Button";
 
 export default function NoteList() {
   const [notes, setNotes] = useState();
@@ -15,7 +17,7 @@ export default function NoteList() {
       setNotes(data.payload);
       setLoaded(true);
     }
-  }
+  };
 
   useEffect(() => {
     load();
@@ -25,11 +27,11 @@ export default function NoteList() {
     return (
       <>
         <p>Notes not found</p>
-        <Link to={"/"}>
+        <Link to={"/${id}"}>
           <p>Go back</p>
         </Link>
       </>
-    )
+    );
   }
 
   if (!isLoaded) {
@@ -37,19 +39,17 @@ export default function NoteList() {
       <>
         <p>Notes are loading...</p>
       </>
-    )
+    );
   }
 
   return (
     <>
       <h1>Note list</h1>
-      {
-        notes.map((note, index) => (
-          <NoteLink key={index} {...note} />
-        ))
-      }
-      <Link to={"/"}>
-        <p>Go back</p>
+      {notes.map((note, index) => (
+        <NoteLink key={index} {...note} />
+      ))}
+      <Link className="backBtn" to={"/"}>
+        <Button variant="outlined">Go back</Button>
       </Link>
     </>
   );

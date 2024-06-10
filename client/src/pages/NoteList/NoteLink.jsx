@@ -11,7 +11,7 @@ import DeleteIcon from "@mui/icons-material/Delete";
 
 const handleDelete = async (e) => {
   e.preventDefault();
-  const data = await deleteTopic(props._id.$oid);
+  const data = await deleteNote(props._id.$oid);
   if (data.status === 200) {
     window.location.reload();
   } else {
@@ -33,7 +33,7 @@ export default function NoteLink(props) {
             aria-controls="panel1-content"
             id="panel1-header"
           >
-            <Typography>Text of note</Typography>
+            <Typography>Text poznámky</Typography>
           </AccordionSummary>
           <AccordionDetails>
             <Typography>{props.text}</Typography>
@@ -41,8 +41,10 @@ export default function NoteLink(props) {
         </Accordion>
 
     <form>
-        <Button onClick={handleDelete} variant="outlined" startIcon={<DeleteIcon />}>
-          DELETE
+        <Button className="changeBtn" variant="contained">
+          <Link to={`/note/${props._id}`}>
+            <p>upravit</p>
+          </Link>
         </Button>
     </form>
       </div>

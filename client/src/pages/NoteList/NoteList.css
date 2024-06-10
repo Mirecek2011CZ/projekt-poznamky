@@ -51,3 +51,6 @@ button:hover {
 p {
   color: black;
 }
+.changeBtn {
+  height: 40px;
+}

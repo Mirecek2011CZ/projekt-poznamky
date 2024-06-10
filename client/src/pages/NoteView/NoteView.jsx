@@ -1,6 +1,10 @@
 import { Link, useParams, useNavigate } from "react-router-dom";
 import { getNote, deleteNote } from "../../models/Note";
 import { useState, useEffect } from "react";
+import * as React from "react";
+import Button from "@mui/material/Button";
+import "./NoteView.css"
+import DeleteIcon from '@mui/icons-material/Delete';
 
 export default function NoteView() {
   const { id } = useParams();
@@ -60,21 +64,16 @@ export default function NoteView() {
   return (
     <>
       <h1>Note view</h1>
-      <p>{id}</p>
-      <p>{note.name}</p>
-      <p>{note.date}</p>
-      <p>{note.type}</p>
-      <p>{note.text}</p>
+      <h2>{note.name}</h2>
       <form>
-        <input type="text" placeholder={note.name} onChange={handleChange} />
-        <button onClick={handleDelete}>Delete</button>
+        <Button variant="outlined" startIcon={<DeleteIcon />} className="Btn" onClick={handleDelete}>Delete</Button>
         <p>{info}</p>
       </form>
       <Link to={`/updatenote/${id}`}>
         <p>Update note</p>
       </Link>
       <Link to={"/"}>
-        <p>Go back</p>
+        <Button variant="outlined">Go back</Button>
       </Link>
     </>
   );
