@@ -38,16 +38,6 @@ export default function NoteCreateForm() {
     return navigate(`/creatednote/${id}`);
   };
 
-  document.addEventListener("DOMContentLoaded", (event) => {
-    const dateInput = document.getElementById("currentDate");
-    const today = new Date();
-    const day = String(today.getDate()).padStart(2, "0");
-    const month = String(today.getMonth() + 1).padStart(2, "0"); // Měsíce jsou v JavaScriptu číslovány od 0
-    const year = today.getFullYear();
-    const currentDate = `${year}-${month}-${day}`;
-    dateInput.value = currentDate;
-  });
-
   return (
     <>
       <div class="form-container">
@@ -65,8 +55,13 @@ export default function NoteCreateForm() {
             placeholder="Enter name"
             onChange={(e) => handleChange(e)}
           />
-          <label for="currentDate">Vyberte datum:</label>
-          <input type="date" id="currentDate" name="currentDate"></input>
+          <input
+            type="text"
+            name="date"
+            required
+            placeholder="Enter date"
+            onChange={(e) => handleChange(e)}
+          />
           <select
             type="text"
             name="type"

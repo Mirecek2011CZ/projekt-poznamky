@@ -1,4 +1,19 @@
-.backBtn {
-    color: red;
+h1 {
+    margin: 50px;
+}
 
+h2{
+    margin: 50px;
+}
+
+.btnDelete {
+  position: absolute;
+  top: 10%;
+
+}
+
+.btnBack {
+  margin: 100px;
+  padding: 100px;
+  top: 120%;
 }

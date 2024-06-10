@@ -66,14 +66,14 @@ export default function NoteView() {
       <h1>Note view</h1>
       <h2>{note.name}</h2>
         <form>
-          <Button variant="outlined" startIcon={<DeleteIcon />} className="delBtn" onClick={handleDelete}>Delete note</Button>
+          <Button variant="outlined" startIcon={<DeleteIcon />} className="btnDelete" onClick={handleDelete}>Delete note</Button>
           <p>{info}</p>
         </form>
         <Link to={`/updatenote/${id}`}>
-        <Button variant="contained">update note</Button>
+        <Button className="btnUpdate" variant="contained">update note</Button>
         </Link>
         <Link to={"/"}>
-          <Button className="backBtn" variant="outlined">Go back</Button>
+          <Button className="btnBack" variant="outlined">Go back</Button>
         </Link>
     </>
   );
