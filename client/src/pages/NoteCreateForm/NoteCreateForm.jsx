@@ -51,7 +51,7 @@ export default function NoteCreateForm() {
     <>
    <div class="form-container">
         <h1>Vytvoření poznámky</h1>
-        <form>
+        <form className="form">
             <input type="text" name="name" required placeholder="Enter name" onChange={e => handleChange(e)} />
             <label for="currentDate">Vyberte datum:</label>
             <input type="date" id="currentDate" name="currentDate"></input>

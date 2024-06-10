@@ -22,7 +22,7 @@ const handleDelete = async (e) => {
 export default function NoteLink(props) {
   return (
     <>
-      <div className="flex">
+      <div className="list">
         <p>{props.name}</p>
         <p>{props.date}</p>
         <p>{props.type}</p>

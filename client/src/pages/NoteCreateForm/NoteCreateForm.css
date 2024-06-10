@@ -33,10 +33,11 @@ select {
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
+    color: #cacaca;
 }
 
 input[type="text"]::placeholder {
-    color: #999;
+    color: #cacaca;
 }
 
 button {
@@ -66,4 +67,8 @@ p {
 
 p:hover {
     color: #0056b3;
+}
+ 
+option {
+    color: #cacaca;
 }
