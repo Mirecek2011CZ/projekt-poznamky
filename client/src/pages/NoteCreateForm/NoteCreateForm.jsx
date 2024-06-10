@@ -40,6 +40,7 @@ export default function NoteCreateForm() {
 
   return (
     <>
+    
       <div class="form-container">
         <Link to={"/"}>
           <Button className="backBtn" variant="outlined">

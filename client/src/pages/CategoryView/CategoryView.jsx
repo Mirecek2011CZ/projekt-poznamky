@@ -59,6 +59,7 @@ export default function CategoryView() {
 
   return (
     <>
+    
       <h1>Category view</h1>
       <p>{id}</p>
       <p>{category.name}</p>

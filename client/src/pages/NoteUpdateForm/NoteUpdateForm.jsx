@@ -66,6 +66,7 @@ export default function NoteUpdateForm() {
 
   return (
     <>
+    <div id="NoteUpdateForm">
       <h1>Note update form</h1>
       <p>{id}</p>
       <form>
@@ -104,6 +105,7 @@ export default function NoteUpdateForm() {
       <Link to={"/"}>
         <p>Go back</p>
       </Link>
+      </div>
     </>
   );
 }

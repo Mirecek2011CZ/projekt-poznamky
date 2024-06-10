@@ -1,15 +1,17 @@
 import { Link, useParams } from "react-router-dom";
-import * as React from "react";
-import Button from "@mui/material/Button";
 
 export default function CreatedNote() {
   const { id } = useParams();  
 
   return (
     <>
-      <h2>Poznámka byla vytvořena</h2>
-      <Link to={"/notes"}>
-      <Button variant="outlined">Seznam poznámek</Button>
+    
+      <p>Created note: { id }</p>
+      <Link to={`/note/${id}`}>
+        <p>View note</p>
+      </Link>
+      <Link to={"/"}>
+        <p>Go home</p>
       </Link>
     </>
   );
