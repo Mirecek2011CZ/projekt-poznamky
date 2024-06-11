@@ -36,7 +36,7 @@ export default function NoteView() {
     if (note.name) {
       const data = await deleteNote(id);
       if (data.status === 200) {
-        navigate("/");
+        navigate("/notes");
       } else {
         setInfo(data.msg);
       }
@@ -73,7 +73,7 @@ export default function NoteView() {
         <Link to={`/updatenote/${id}`}>
         <Button className="btnUpdate" variant="contained">Upravit poznámku</Button>
         </Link>
-        <Link to={"/notes"}>
+        <Link to={"/notes"}>  
           <Button className="btnBack" variant="outlined">Go back</Button>
         </Link>
     </>
