@@ -88,9 +88,9 @@ export default function NoteUpdateForm() {
         />
         <select type="text" name="type" onChange={value => handleChange(value)}>
           <option value = "Enter type"></option>
-          <option value = "Option1">Option1</option>
-          <option value = "Option2">Option2</option>
-          <option value = "Option3">Option3</option>
+          <option value = "Domácnost">Domácnost</option>
+          <option value = "Škola">Škola</option>
+          <option value = "Obecné">Obecné</option>
         </select>
         <input
           type="text"
