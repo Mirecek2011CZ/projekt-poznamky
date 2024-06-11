@@ -1,11 +1,15 @@
 import { Link, useParams, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { updateNote, getNote } from "../../models/Note";
+import CategoryLink from "../CategoryList/CategoryLink";
+import { getCategories } from "../../models/Category";
 
 export default function NoteUpdateForm() {
   const { id } = useParams();
   const [note, setNote] = useState();
   const [isLoaded, setLoaded] = useState(false);
+  const [isLoadedCategories, setLoadedCategories] = useState(false);
+  const [categories, setCategories] = useState();
   const [info, setInfo] = useState();
   const [formData, setFormData] = useState();
   const navigate = useNavigate();
@@ -18,24 +22,53 @@ export default function NoteUpdateForm() {
       setLoaded(true);
     }
   };
+  
+  const load_categories = async () => {
+    const data = await getCategories();
+    if (data.status === 500 || data.status === 404) return setLoadedCategories(null);
+    if (data.status === 200) {
+      console.log(data.payload)
+      setCategories(data.payload);
+      setLoadedCategories(true);
+    }
+  }
+
+  useEffect(() => {
+    load_categories();
+    load()
+  }, []);
+
+  if (isLoadedCategories === null) {
+    console.log(1111111)
+    return (
+      <>
+      </>
+    )
+  }
+
+  if (!isLoadedCategories) {
+    console.log(222222)
+    return (
+      <>
+      </>
+    )
+  }
 
   const postForm = async () => {
     const note = await updateNote(id, formData);
     if (note.status === 200) {
-      navigate(`/note/${id}`);
+      navigate(`/notes`);
     } else {
       setInfo(note.msg);
     }
   };
 
   const handleChange = (e) => {
-    if (e.target.value !== "Enter type"){
-      console.log(e.target.name)
-      setFormData({...formData, [e.target.name]: e.target.value});
-    }
-    else{
-      e.target.value = ""
-      setFormData({...formData, [e.target.name]: e.target.value});
+    if (e.target.value !== "Enter type") {
+      setFormData({ ...formData, [e.target.name]: e.target.value });
+    } else {
+      e.target.value = "";
+      setFormData({ ...formData, [e.target.name]: e.target.value });
     }
   };
 
@@ -43,10 +76,6 @@ export default function NoteUpdateForm() {
     e.preventDefault();
     postForm();
   };
-
-  useEffect(() => {
-    load();
-  }, []);
 
   if (isLoaded === null) {
     return (
@@ -87,10 +116,15 @@ export default function NoteUpdateForm() {
           onChange={(e) => handleChange(e)}
         />
         <select type="text" name="type" onChange={value => handleChange(value)}>
-          <option value = "Enter type"></option>
-          <option value = "Domácnost">Domácnost</option>
-          <option value = "Škola">Škola</option>
-          <option value = "Obecné">Obecné</option>
+            <option value = "Enter type"></option>
+            <option value = "Domácnost">Domácnost</option>
+            <option value = "Škola">Škola</option>
+            <option value = "Obecné">Obecné</option>
+            {
+              categories.map((category, index) => (
+                <option value={`${categories[index].category}`}><CategoryLink key={index} {...category} /></option>
+              ))
+            }
         </select>
         <input
           type="text"
