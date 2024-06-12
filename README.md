@@ -5,6 +5,6 @@ npm install @mui/icons-material
 server:
 npm start
 
-client 
+client: 
 npm install
 npm run dev
