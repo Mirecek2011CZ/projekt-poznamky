@@ -1,0 +1,24 @@
+#NoteView h2 {
+  margin: 50px;
+  text-align: center;
+}
+
+#NoteView .btnBack {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+#NoteView .btnUpdate {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 20px;
+}
+
+#NoteView .btnDelete {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+
+}

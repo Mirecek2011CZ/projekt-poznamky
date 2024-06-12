@@ -1,0 +1,81 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.form-container {
+    background-color: whitesmoke;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+}
+
+h1 {
+    margin-bottom: 24px;
+    font-size: 24px;
+    color: #333;
+    text-align: center;
+}
+
+input[type="text"],
+input[type="date"],
+select {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    color: #cacaca;
+}
+
+input[type="text"]::placeholder {
+    color: #cacaca;
+}
+
+.createBtn {
+    width: 100%;
+    padding: 12px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.createBtn:hover {
+    background-color: #0056b3;
+}
+
+p {
+    text-align: center;
+    color: #007BFF;
+    text-decoration: none;
+    margin-top: 16px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+p:hover {
+    color: #0056b3;
+}
+ 
+option {
+    color: #cacaca;
+}
+
+.backBtn {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 5px;
+}
