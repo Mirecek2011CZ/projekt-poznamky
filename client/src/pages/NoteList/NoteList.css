@@ -1,7 +1,6 @@
 #NoteList * {
   font-family: sans-serif;
   box-sizing: border-box;
-  
 
 }
 
@@ -34,20 +33,6 @@
 #NoteList .list-item:hover {
   transform: translateY(-5px);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-}
-
-#NoteList button {
-
-  color: white;
-  border: none;
-  padding: 10px 15px;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.2s;
-}
-
-#NoteList button:hover {
-  background-color: #505050;
 }
 
 #NoteList p {

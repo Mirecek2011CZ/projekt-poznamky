@@ -1,0 +1,27 @@
+#CategoryCreateForm * {
+  font-family: sans-serif;
+  box-sizing: border-box;
+}
+
+#CategoryCreateForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: center;
+  width: 400px;
+}
+
+#CategoryCreateForm button {
+  text-align: center;
+  align-items: center;
+}

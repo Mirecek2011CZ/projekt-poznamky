@@ -6,7 +6,6 @@ import { getCategories } from "../../models/Category";
 import "./NoteCreateForm.css";
 import * as React from "react";
 import Button from "@mui/material/Button";
-import { RoomPreferences } from "@mui/icons-material";
 
 export default function NoteCreateForm() {
   const [categories, setCategories] = useState();

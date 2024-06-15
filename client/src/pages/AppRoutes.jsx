@@ -9,9 +9,6 @@ import CreatedNote from "./NoteCreateForm/CreatedNote";
 
 import CategoryCreateForm from "./CategoryCreateForm/CategoryCreateForm";
 import CategoryList from "./CategoryList/CategoryList";
-import CategoryUpdateForm from "./CategoryUpdateForm/CategoryUpdateForm";
-import CategoryView from "./CategoryView/CategoryView";
-import CreatedCategory from "./CategoryCreateForm/CreatedCategory";
 
 export default function AppRoutes() {
   return (
@@ -27,10 +24,7 @@ export default function AppRoutes() {
           <Route path="/creatednote/:id" element={<CreatedNote />} />
 
           <Route path="/createcategory" element={<CategoryCreateForm />} />
-          <Route path="/updatecategory/:id" element={<CategoryUpdateForm />} />
-          <Route path="/category/:id" element={<CategoryView />} />
           <Route path="/categories" element={<CategoryList />} />
-          <Route path="/createdcategory/:id" element={<CreatedCategory />} />
         </Routes>
       </BrowserRouter>
     </>

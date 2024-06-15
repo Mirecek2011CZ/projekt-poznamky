@@ -1,9 +1,12 @@
 import { Link, useNavigate } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { createCategory } from "../../models/Category";
+import "./CategoryCreateForm.css";
+import * as React from "react";
+import Button from "@mui/material/Button";
 
 export default function CategoryCreateForm() {
-  const [formData, setFormData] = useState();
+  const [formData, setFormData] = useState({});
   const [info, setInfo] = useState();
   const navigate = useNavigate();
 
@@ -14,40 +17,49 @@ export default function CategoryCreateForm() {
     } else {
       setInfo(category.msg);
     }
-  }
-  
+  };
+
   const handleChange = (e) => {
-    if (e.target.value !== "Enter type"){
-      console.log(e.target.name)
-      setFormData({...formData, [e.target.name]: e.target.value});
-    }
-    else{
-      e.target.value = ""
-      setFormData({...formData, [e.target.name]: e.target.value});
-    }
-  }
-  
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
   const handlePost = (e) => {
     e.preventDefault();
     postForm();
-  }
+  };
 
   const redirectToSuccessPage = (id) => {
-    return navigate(`/createdcategory/${id}`)
-  }
+    return navigate(`/createdcategory/${id}`);
+  };
 
   return (
     <>
-      <h1>Category create form</h1>
-      <form>
-        <input type="text" name="category" required placeholder="Enter category" onChange={e => handleChange(e)}/>
-        <button onClick={handlePost}>
-          Create category
-        </button>
-      </form>
-      <Link to={"/"}>
-        <p>Go back</p>
-      </Link>
+      <div id="CategoryCreateForm">
+        <Link to={"/"}>
+          <Button className="backBtn" variant="outlined">
+            Go back
+          </Button>
+        </Link>
+        <h1>Vytvoření kategorie</h1>
+        <form>
+          <input
+            type="text"
+            name="category"
+            required
+            placeholder="Enter category"
+            onChange={(e) => handleChange(e)}
+          />
+          <div className="buttonContainer">
+            <Button
+              onClick={handlePost}
+              className="btnCreate"
+              variant="contained"
+            >
+              Vytvořit kategorii
+            </Button>
+          </div>
+        </form>
+      </div>
     </>
   );
 }

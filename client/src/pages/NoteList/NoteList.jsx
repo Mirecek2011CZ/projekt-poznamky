@@ -99,7 +99,10 @@ export default function NoteList() {
   return (
     <>
     <div id="NoteList">
-      <h1>Note list</h1>
+    <Link className="backBtn" to={"/"}>
+        <Button variant="outlined">Go back</Button>
+      </Link>
+      <h1>Seznam poznámek</h1>
       <select
             type="text"
             name="type"
@@ -142,9 +145,7 @@ export default function NoteList() {
         <p>No notes found</p>
         : null}
       
-      <Link className="backBtn" to={"/"}>
-        <Button variant="outlined">Go back</Button>
-      </Link>
+
       </div>
     </>
   );

@@ -3,8 +3,8 @@ import { getNote, deleteNote } from "../../models/Note";
 import { useState, useEffect } from "react";
 import * as React from "react";
 import Button from "@mui/material/Button";
-import "./NoteView.css"
-import DeleteIcon from '@mui/icons-material/Delete';
+import "./NoteView.css";
+import DeleteIcon from "@mui/icons-material/Delete";
 
 export default function NoteView() {
   const { id } = useParams();
@@ -21,7 +21,7 @@ export default function NoteView() {
       setNote(data.payload);
       setLoaded(true);
     }
-  }
+  };
 
   useEffect(() => {
     load();
@@ -29,7 +29,7 @@ export default function NoteView() {
 
   const handleChange = (e) => {
     setFormData(e.target.value);
-  }
+  };
 
   const handleDelete = async (e) => {
     e.preventDefault();
@@ -43,14 +43,14 @@ export default function NoteView() {
     } else {
       setInfo("Wrong input!");
     }
-  }
+  };
 
   if (isLoaded === null) {
     return (
       <>
         <p>Note not found</p>
       </>
-    )
+    );
   }
 
   if (!isLoaded) {
@@ -58,24 +58,36 @@ export default function NoteView() {
       <>
         <p>Note is loading...</p>
       </>
-    )
+    );
   }
 
   return (
     <>
-    
-      <h1>Note view</h1>
-      <h2>{note.name}</h2>
+      <div id="noteView">
+        <Link to={"/notes"}>
+          <Button className="btnBack" variant="outlined">
+            Go back
+          </Button>
+        </Link>
+        <h1> Úprava poznámky</h1>
+        <h2>{note.name}</h2>
         <form>
-          <Button variant="outlined" startIcon={<DeleteIcon />} className="btnDelete" onClick={handleDelete}>Smazat poznámku</Button>
+          <Button
+            variant="outlined"
+            startIcon={<DeleteIcon />}
+            className="btnDelete"
+            onClick={handleDelete}
+          >
+            Smazat poznámku
+          </Button>
           <p>{info}</p>
         </form>
         <Link to={`/updatenote/${id}`}>
-        <Button className="btnUpdate" variant="contained">Upravit poznámku</Button>
+          <Button className="btnUpdate" variant="contained">
+            Upravit poznámku
+          </Button>
         </Link>
-        <Link to={"/notes"}>  
-          <Button className="btnBack" variant="outlined">Go back</Button>
-        </Link>
+      </div>
     </>
   );
 }
