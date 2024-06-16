@@ -66,7 +66,7 @@ export default function NoteView() {
       <div id="noteView">
         <Link to={"/notes"}>
           <Button className="btnBack" variant="outlined">
-            Go back
+            Zpět
           </Button>
         </Link>
         <h1> Úprava poznámky</h1>
