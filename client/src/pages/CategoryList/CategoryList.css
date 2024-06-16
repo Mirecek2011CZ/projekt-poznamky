@@ -1,8 +1,12 @@
-p {
+#categoryList p {
     color:black;
     padding: 10px;
 }
 
-.backBtn {
+#categoryList .backBtn {
     padding: 10px;
+}
+#categoryList * {
+    font-family: sans-serif;
+    box-sizing: border-box;
 }

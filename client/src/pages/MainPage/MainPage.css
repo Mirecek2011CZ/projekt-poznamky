@@ -1,4 +1,4 @@
-body{
+body {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -7,8 +7,7 @@ body{
     color: black;
 }
 
-
-#root{
+#root {
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -19,7 +18,7 @@ body{
 .button-container {
     display: flex;
     gap: 40px;
-    padding-top: 150px;
+    padding-top: 40px;
 }
 
 .button {
@@ -49,6 +48,13 @@ body{
     background-color: #007BFF;
     color: white;
 }
+
 h1 {
     padding-top: 75px;
+}
+
+.top-button-container {
+    display: flex;
+    justify-content: center;
+    padding-top: 150px;
 }

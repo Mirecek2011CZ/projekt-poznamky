@@ -35,11 +35,6 @@ export default function CategoryCreateForm() {
   return (
     <>
       <div id="CategoryCreateForm">
-        <Link to={"/"}>
-          <Button className="backBtn" variant="outlined">
-            Zpět
-          </Button>
-        </Link>
         <h1>Vytvoření kategorie</h1>
         <form>
           <input
@@ -60,6 +55,11 @@ export default function CategoryCreateForm() {
           </div>
         </form>
       </div>
+      <Link to={"/"}>
+        <Button className="backBtn" variant="outlined">
+          Zpět
+        </Button>
+      </Link>
     </>
   );
 }

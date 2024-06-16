@@ -3,6 +3,8 @@ import { useState, useEffect } from "react";
 import { updateNote, getNote } from "../../models/Note";
 import CategoryLink from "../CategoryList/CategoryLink";
 import { getCategories } from "../../models/Category";
+import Button from "@mui/material/Button";
+import "./NoteUpdateForm.css"
 
 export default function NoteUpdateForm() {
   const { id } = useParams();
@@ -22,36 +24,31 @@ export default function NoteUpdateForm() {
       setLoaded(true);
     }
   };
-  
+
   const load_categories = async () => {
     const data = await getCategories();
-    if (data.status === 500 || data.status === 404) return setLoadedCategories(null);
+    if (data.status === 500 || data.status === 404)
+      return setLoadedCategories(null);
     if (data.status === 200) {
-      console.log(data.payload)
+      console.log(data.payload);
       setCategories(data.payload);
       setLoadedCategories(true);
     }
-  }
+  };
 
   useEffect(() => {
     load_categories();
-    load()
+    load();
   }, []);
 
   if (isLoadedCategories === null) {
-    console.log(1111111)
-    return (
-      <>
-      </>
-    )
+    console.log(1111111);
+    return <></>;
   }
 
   if (!isLoadedCategories) {
-    console.log(222222)
-    return (
-      <>
-      </>
-    )
+    console.log(222222);
+    return <></>;
   }
 
   const postForm = async () => {
@@ -95,51 +92,57 @@ export default function NoteUpdateForm() {
 
   return (
     <>
-    <div id="NoteUpdateForm">
-      <h1>Úprava poznámky</h1>
-      <p>{id}</p>
-      <form>
-        <input
-          type="text"
-          defaultValue={note.name}
-          name="name"
-          required
-          placeholder="Enter note name"
-          onChange={(e) => handleChange(e)}
-        />
-        <input
-          type="text"
-          defaultValue={note.date}
-          name="date"
-          required
-          placeholder="Enter date"
-          onChange={(e) => handleChange(e)}
-        />
-        <select type="text" name="type" onChange={value => handleChange(value)}>
-            <option value = "Enter type"></option>
-            <option value = "Domácnost">Domácnost</option>
-            <option value = "Škola">Škola</option>
-            <option value = "Obecné">Obecné</option>
-            {
-              categories.map((category, index) => (
-                <option value={`${categories[index].category}`}><CategoryLink key={index} {...category} /></option>
-              ))
-            }
-        </select>
-        <input
-          type="text"
-          defaultValue={note.text}
-          name="text"
-          required
-          placeholder="Enter text"
-          onChange={(e) => handleChange(e)}
-        />
-        <button onClick={handlePost}>Update note</button>
-      </form>
-      <Link to={"/"}>
-        <p>Zpět</p>
-      </Link>
+      <div id="NoteUpdateForm">
+        <h1>Úprava poznámky</h1>
+        <p>{id}</p>
+        <form>
+          <input
+            type="text"
+            defaultValue={note.name}
+            name="name"
+            required
+            placeholder="Enter note name"
+            onChange={(e) => handleChange(e)}
+          />
+          <input
+            type="text"
+            defaultValue={note.date}
+            name="date"
+            required
+            placeholder="Enter date"
+            onChange={(e) => handleChange(e)}
+          />
+          <select
+            type="text"
+            name="type"
+            onChange={(value) => handleChange(value)}
+          >
+            <option value="Enter type"></option>
+            <option value="Domácnost">Domácnost</option>
+            <option value="Škola">Škola</option>
+            <option value="Obecné">Obecné</option>
+            {categories.map((category, index) => (
+              <option value={`${categories[index].category}`}>
+                <CategoryLink key={index} {...category} />
+              </option>
+            ))}
+          </select>
+          <input
+            type="text"
+            defaultValue={note.text}
+            name="text"
+            required
+            placeholder="Enter text"
+            onChange={(e) => handleChange(e)}
+          />
+          <button onClick={handlePost}>Update note</button>
+        </form>
       </div>
+      <Link to={`/`}>
+        <Button className="backBtn" variant="outlined">
+          Zpět
+        </Button>
+      </Link>
     </>
   );
 }

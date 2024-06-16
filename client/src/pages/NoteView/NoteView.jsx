@@ -64,11 +64,6 @@ export default function NoteView() {
   return (
     <>
       <div id="noteView">
-        <Link to={"/notes"}>
-          <Button className="btnBack" variant="outlined">
-            Zpět
-          </Button>
-        </Link>
         <h1> Úprava poznámky</h1>
         <h2>{note.name}</h2>
         <form>
@@ -85,6 +80,11 @@ export default function NoteView() {
         <Link to={`/updatenote/${id}`}>
           <Button className="btnUpdate" variant="contained">
             Upravit poznámku
+          </Button>
+        </Link>
+        <Link to={"/notes"}>
+          <Button className="btnBack" variant="outlined">
+            Zpět
           </Button>
         </Link>
       </div>

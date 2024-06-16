@@ -7,6 +7,7 @@
 #noteView * {
   font-family: sans-serif;
   box-sizing: border-box;
+
 }
 
 #noteView h2 {
@@ -15,5 +16,10 @@
 
 #noteView .btnDelete {
   color: black;
-  display: flex;
 }
+
+#noteView .btnBack {
+  margin: 25px;
+}
+
+

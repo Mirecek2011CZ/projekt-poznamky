@@ -76,13 +76,9 @@ export default function NoteCreateForm() {
 
   return (
     <>
-
+  <div id="noteCreate">
       <div class="form-container">
-        <Link to={"/"}>
-          <Button className="backBtn" variant="outlined">
-            Zpět
-          </Button>
-        </Link>
+
         <h1>Vytvoření poznámky</h1>
         <form className="form">
           <input
@@ -126,6 +122,12 @@ export default function NoteCreateForm() {
           </button>
         </form>
       </div>
+      <Link to={"/"}>
+          <Button className="backBtn" variant="outlined">
+            Zpět
+          </Button>
+        </Link>
+        </div>
     </>
   );
 }

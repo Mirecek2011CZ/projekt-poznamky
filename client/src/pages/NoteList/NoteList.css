@@ -41,3 +41,9 @@
 #NoteList .changeBtn {
   height: 40px;
 }
+
+#NoteList .backBtn {
+  position: absolute;
+  top: 8%;
+  left: 7%;
+}

@@ -1,6 +1,7 @@
 #CategoryCreateForm * {
   font-family: sans-serif;
   box-sizing: border-box;
+  padding: 20px;
 }
 
 #CategoryCreateForm {
@@ -24,4 +25,5 @@ form {
 #CategoryCreateForm button {
   text-align: center;
   align-items: center;
+  
 }
