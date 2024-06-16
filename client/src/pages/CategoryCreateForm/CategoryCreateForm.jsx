@@ -37,7 +37,7 @@ export default function CategoryCreateForm() {
       <div id="CategoryCreateForm">
         <Link to={"/"}>
           <Button className="backBtn" variant="outlined">
-            Go back
+            Zpět
           </Button>
         </Link>
         <h1>Vytvoření kategorie</h1>
@@ -46,7 +46,7 @@ export default function CategoryCreateForm() {
             type="text"
             name="category"
             required
-            placeholder="Enter category"
+            placeholder="Název kategorie"
             onChange={(e) => handleChange(e)}
           />
           <div className="buttonContainer">
