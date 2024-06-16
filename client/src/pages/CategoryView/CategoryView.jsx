@@ -72,7 +72,7 @@ export default function CategoryView() {
         <p>Update category</p>
       </Link>
       <Link to={"/"}>
-        <p>Go back</p>
+        <p>Zpět</p>
       </Link>
     </>
   );
