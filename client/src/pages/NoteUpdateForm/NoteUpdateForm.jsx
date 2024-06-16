@@ -96,7 +96,7 @@ export default function NoteUpdateForm() {
   return (
     <>
     <div id="NoteUpdateForm">
-      <h1>Note update form</h1>
+      <h1>Úprava poznámky</h1>
       <p>{id}</p>
       <form>
         <input
@@ -137,7 +137,7 @@ export default function NoteUpdateForm() {
         <button onClick={handlePost}>Update note</button>
       </form>
       <Link to={"/"}>
-        <p>Go back</p>
+        <p>Zpět</p>
       </Link>
       </div>
     </>
