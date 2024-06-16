@@ -80,7 +80,7 @@ export default function NoteCreateForm() {
       <div class="form-container">
         <Link to={"/"}>
           <Button className="backBtn" variant="outlined">
-            Go back
+            Zpět
           </Button>
         </Link>
         <h1>Vytvoření poznámky</h1>
@@ -89,7 +89,7 @@ export default function NoteCreateForm() {
             type="text"
             name="name"
             required
-            placeholder="Enter name"
+            placeholder="Název poznámky"
             onChange={(e) => handleChange(e)}
           />
           <input
@@ -118,11 +118,11 @@ export default function NoteCreateForm() {
             type="text"
             name="text"
             required
-            placeholder="Enter text"
+            placeholder="Text"
             onChange={(e) => handleChange(e)}
           />
           <button className="createBtn" onClick={handlePost}>
-            Create note
+            Vytvořit poznámku
           </button>
         </form>
       </div>
