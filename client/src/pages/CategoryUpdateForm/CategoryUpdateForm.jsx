@@ -66,7 +66,7 @@ export default function CategoryUpdateForm() {
 
   return (
     <>
-      <h1>Category update form</h1>
+      <h1>Upravit kategorii</h1>
       <p>{id}</p>
       <form>
         <input
@@ -80,7 +80,7 @@ export default function CategoryUpdateForm() {
         <button onClick={handlePost}>Update category</button>
       </form>
       <Link to={"/"}>
-        <p>Go back</p>
+        <p>Zpět</p>
       </Link>
     </>
   );
