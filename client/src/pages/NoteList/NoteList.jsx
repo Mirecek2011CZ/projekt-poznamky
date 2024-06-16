@@ -100,7 +100,7 @@ export default function NoteList() {
     <>
     <div id="NoteList">
     <Link className="backBtn" to={"/"}>
-        <Button variant="outlined">Go back</Button>
+        <Button variant="outlined">Zpět</Button>
       </Link>
       <h1>Seznam poznámek</h1>
       <select
@@ -142,7 +142,7 @@ export default function NoteList() {
           <NoteLink key={index} {...note} />
         )) : null}
       {current_notes.length == 0 && filterValue && filterValue.target.value.trim() != "" ?
-        <p>No notes found</p>
+        <p>Nebyly nalezené žádné poznámky v této kategorii.</p>
         : null}
       
 
