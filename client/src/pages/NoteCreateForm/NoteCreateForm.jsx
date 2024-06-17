@@ -99,8 +99,9 @@ export default function NoteCreateForm() {
             type="text"
             name="type"
             onChange={(value) => handleChange(value)}
+           
           >
-            <option value = ""></option>
+                <option value = "">Výběr kategorie</option>
             <option value = "Domácnost">Domácnost</option>
             <option value = "Škola">Škola</option>
             <option value = "Obecné">Obecné</option>
@@ -120,13 +121,15 @@ export default function NoteCreateForm() {
           <button className="createBtn" onClick={handlePost}>
             Vytvořit poznámku
           </button>
+          
         </form>
-      </div>
-      <Link to={"/"}>
+        <Link to={"/"}>
           <Button className="backBtn" variant="outlined">
             Zpět
           </Button>
         </Link>
+      </div>
+     
         </div>
     </>
   );

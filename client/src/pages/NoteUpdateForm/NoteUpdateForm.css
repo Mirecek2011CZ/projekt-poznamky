@@ -2,3 +2,20 @@
     font-family: sans-serif;
     box-sizing: border-box;
 }
+
+.updateBtn {
+    width: 50%;
+    padding: 12px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    margin-bottom: 10px;
+}
+
+.updateBtn:hover {
+    background-color: #0056b3;
+}

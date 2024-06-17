@@ -29,7 +29,7 @@ export default function CategoryCreateForm() {
   };
 
   const redirectToSuccessPage = (id) => {
-    return navigate(`/createdcategory/${id}`);
+    return navigate(`/`);
   };
 
   return (

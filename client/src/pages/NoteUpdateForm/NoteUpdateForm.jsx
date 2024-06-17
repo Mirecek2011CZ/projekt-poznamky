@@ -94,7 +94,7 @@ export default function NoteUpdateForm() {
     <>
       <div id="NoteUpdateForm">
         <h1>Úprava poznámky</h1>
-        <p>{id}</p>
+        
         <form>
           <input
             type="text"
@@ -105,8 +105,7 @@ export default function NoteUpdateForm() {
             onChange={(e) => handleChange(e)}
           />
           <input
-            type="text"
-            defaultValue={note.date}
+            type="date"
             name="date"
             required
             placeholder="Enter date"
@@ -117,7 +116,7 @@ export default function NoteUpdateForm() {
             name="type"
             onChange={(value) => handleChange(value)}
           >
-            <option value="Enter type"></option>
+            <option value = "">Výběr kategorie</option>
             <option value="Domácnost">Domácnost</option>
             <option value="Škola">Škola</option>
             <option value="Obecné">Obecné</option>
@@ -135,7 +134,7 @@ export default function NoteUpdateForm() {
             placeholder="Enter text"
             onChange={(e) => handleChange(e)}
           />
-          <button onClick={handlePost}>Update note</button>
+          <button className="updateBtn" onClick={handlePost}>Upravit poznámku</button>
         </form>
       </div>
       <Link to={`/`}>
